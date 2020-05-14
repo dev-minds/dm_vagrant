@@ -1,0 +1,23 @@
+# dm_vagrant
+
+      "sudo yum update -y",
+      "export ANSIBLE_HOST_KEY_CHECKING=False",
+      "sudo yum install -y https://centos7.iuscommunity.org/ius-release.rpm",
+      "sudo yum install epel-release -y",
+      "sudo yum install yum-utils -y",
+      "sudo yum install -y python36u python36u-libs python36u-devel python36u-pip",
+      "sudo yum install -y yum-utils device-mapper-persistent-data lvm2",
+      "sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo",
+      "sudo yum install -y docker-ce",
+      "sudo yum-config-manager --enable docker-ce-edge",
+      "sudo yum-config-manager --enable docker-ce-test",
+      "sudo usermod -aG docker $USER",
+      "sudo yum install ansible -y",
+      "sudo yum install git wget zip unzip vim supervisor -y",
+      "sudo pip3.6 install virtualenv",
+      "sudo chmod +x /usr/local/bin/docker-compose",
+      "sudo systemctl start docker",
+      "sudo systemctl enable docker ",
+      "sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux",
+      "sudo sed -i 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/selinux/config",
+      "sudo hostnamectl set-hostname bastion"

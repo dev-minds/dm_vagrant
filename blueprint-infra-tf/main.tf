@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket  = "NAME_OF_YOUR_REMOTE_BUCKET"
-    key     = "UR_TERRAFOMR_BUCKET/SUBFOLDER.tfstat"
+    key     = "UR_TERRAFORM_BUCKET/SUBFOLDER.tfstat"
     region  = "eu-west-1"
     encrypt = "true"
   }
@@ -46,7 +46,7 @@ resource "aws_instance" "blueprint_inst_res" {
   connection {
     type        = "ssh"
     user        = "centos"
-    private_key = "${file("./aws-eb")}"
+    private_key = "${file("./YOUR_KEY_NAME")}"
     timeout     = "3m"
     host        = "${self.public_ip}"
     #host        = "${self.private_ip}"
